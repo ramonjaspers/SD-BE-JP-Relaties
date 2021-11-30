@@ -20,8 +20,13 @@ public class DogOwnerMain {
      */
 
     public static void main(String[] args) {
+        Dog dog = new Dog("Barra", "vuilnisbak", 12, Gender.Female);
 
+        DogOwner nick = new DogOwner("Nick", Gender.Male);
+        nick.setDog(dog);
 
+        System.out.println(nick.toString());
+        nick.increaseDogAge();
+        System.out.println(nick.toString());
     }
-
 }
