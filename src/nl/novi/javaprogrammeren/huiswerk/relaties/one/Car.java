@@ -13,7 +13,6 @@ public class Car {
 
     private CarOwner owner;
 
-
     public Car(String numberPlate, String brand, String subType, int amountOfKilometers) {
         this.numberPlate = numberPlate;
         this.brand = brand;
@@ -50,12 +49,10 @@ public class Car {
     }
 
     public CarOwner getOwner() {
-        return owner;
+        return this.owner;
     }
 
     public void setOwner(CarOwner owner) {
         this.owner = owner;
     }
-
-
 }

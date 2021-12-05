@@ -24,6 +24,31 @@ public class MainCar {
 
      */
     public static void main(String[] args) {
+        // Construct cars
+        Car bimmer = new Car("69-420-GG", "BMW", "E30", 352343);
+        Car volvo = new Car("11-123-22", "Volvo", "adsf", 123123);
+        // Construct owners
+        CarOwner fastBimmerBoi = new CarOwner("Giorgi Tevzadze", 26);
+        CarOwner jongeSjonnie = new CarOwner("Sjonnie Johnny", 16);
+        // Construct dealer
+        CarDealer bruinBarrelDealer = new CarDealer("Bruin Barrel en CO");
 
+        // Add cars to dealer
+        bruinBarrelDealer.addCar(bimmer);
+        bruinBarrelDealer.addCar(volvo);
+
+        // Show in log that no cars are owned
+        System.out.println(bruinBarrelDealer.getName() + " has " + bruinBarrelDealer.getCars().size() + " cars");
+        System.out.println(fastBimmerBoi.getName() + " has " + fastBimmerBoi.getCars().size() + " cars");
+
+        // Try to sell the cars to persons
+        bruinBarrelDealer.setNewCarOwner(bimmer, fastBimmerBoi);
+        bruinBarrelDealer.setNewCarOwner(volvo, jongeSjonnie);
+
+        System.out.println(bruinBarrelDealer.getName() + " has " + bruinBarrelDealer.getCars().size() + " cars");
+        System.out.println(fastBimmerBoi.getName() + " has " + fastBimmerBoi.getCars().size() + " cars");
+        System.out.println(jongeSjonnie.getName() + " has " + jongeSjonnie.getCars().size() + " cars");
+        System.out.println(bimmer.getSubType() + " " + bimmer.getNumberPlate() + " Owner " + bimmer.getOwner().getName());
+        System.out.println(volvo.getSubType() + " " + volvo.getNumberPlate() + " Owner " + volvo.getOwner().getName());
     }
 }
